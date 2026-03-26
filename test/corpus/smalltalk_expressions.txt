@@ -1,0 +1,344 @@
+==========================================
+Integer literal
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ 42
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (number))))))
+
+==========================================
+Float literal
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ 3.14
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (number))))))
+
+==========================================
+Radix integer literal
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ 16rFF
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (unary_message receiver: (number) (unary_identifier)))))))
+
+==========================================
+String literal
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ 'hello'
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (string))))))
+
+==========================================
+Symbol literal
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ #symbol
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (symbol))))))
+
+==========================================
+Quoted symbol literal
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ #'hello world'
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (symbol))))))
+
+==========================================
+Character literal
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ $A
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (character))))))
+
+==========================================
+Literal array
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ #(1 2 3)
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (literal_array (symbol) (symbol) (symbol)))))))
+
+==========================================
+Byte array literal
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ #[1 2 3]
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (byte_array (number) (number) (number)))))))
+
+==========================================
+Dynamic array
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ { 1 + 1. 2 + 2 }
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (dynamic_array
+            (binary_message receiver: (number) (binary_operator) (number))
+            (binary_message receiver: (number) (binary_operator) (number))))))))
+
+==========================================
+thisContext pseudo-variable
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ thisContext
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (thisContext))))))
+
+==========================================
+self and super
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ super initialize
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (unary_message receiver: (super) (unary_identifier)))))))
+
+==========================================
+true false nil
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ true & false | nil
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (binary_message
+            receiver: (binary_message
+              receiver: (true)
+              (binary_operator)
+              (false))
+            (binary_operator)
+            (nil)))))))
+
+==========================================
+Assignment
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    | x |
+    x := 42.
+    ^ x
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (temporaries (identifier))
+      (statement (assignment (identifier) (number)))
+      (statement (return (identifier))))))
+
+==========================================
+Block with argument
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ [ :x | x + 1 ]
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (block
+            (block_argument)
+            (statement
+              (binary_message receiver: (identifier) (binary_operator) (number)))))))))
+
+==========================================
+Parenthesized expression
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ (1 + 2) * 3
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (binary_message
+            receiver: (parenthesized_expression
+              (binary_message receiver: (number) (binary_operator) (number)))
+            (binary_operator)
+            (number)))))))

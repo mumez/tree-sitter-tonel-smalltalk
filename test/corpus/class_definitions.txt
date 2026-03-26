@@ -1,0 +1,114 @@
+==========================================
+Simple class definition
+==========================================
+
+Class {
+    #name : #Counter,
+    #superclass : #Object,
+    #category : 'Demo-Core'
+}
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol)))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol)))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))))))
+
+==========================================
+Class with comment
+==========================================
+
+"A sample class for demonstration"
+Class {
+    #name : #Counter,
+    #superclass : #Object
+}
+
+---
+
+(source_file
+  (class_comment)
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol)))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol)))))))
+
+==========================================
+Class with instVars list
+==========================================
+
+Class {
+    #name : #Foo,
+    #instVars : [ 'x', 'y' ],
+    #category : 'Demo'
+}
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol)))
+        (ston_pair
+          (ston_key (ston_symbol))
+          (ston_value
+            (ston_list
+              (ston_value (string))
+              (ston_value (string)))))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))))))
+
+==========================================
+Trait definition
+==========================================
+
+Trait {
+    #name : #TCountable,
+    #category : 'Demo-Traits'
+}
+
+---
+
+(source_file
+  (definition
+    (trait_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol)))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))))))
+
+==========================================
+Extension definition
+==========================================
+
+Extension {
+    #name : #String
+}
+
+---
+
+(source_file
+  (definition
+    (extension_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol)))))))
+
+==========================================
+Package definition with quoted symbol
+==========================================
+
+Package {
+    #name : #'Stick-Core'
+}
+
+---
+
+(source_file
+  (definition
+    (package_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol)))))))

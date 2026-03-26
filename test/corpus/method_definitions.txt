@@ -1,0 +1,333 @@
+==========================================
+Method with unary selector
+==========================================
+
+Class { #name : #Counter }
+
+Counter >> value [
+    ^ value
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference
+      class_name: (identifier)
+      selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement (return (identifier))))))
+
+==========================================
+Method with keyword selector
+==========================================
+
+Class { #name : #Counter }
+
+Counter >> value: anInteger [
+    value := anInteger
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference
+      class_name: (identifier)
+      selector: (keyword)
+      param: (identifier))
+    (method_body
+      (statement
+        (assignment (identifier) (identifier))))))
+
+==========================================
+Method with binary selector
+==========================================
+
+Class { #name : #Counter }
+
+Counter >> + aNumber [
+    ^ self value + aNumber
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference
+      class_name: (identifier)
+      selector: (binary_selector (binary_operator))
+      param: (identifier))
+    (method_body
+      (statement
+        (return
+          (binary_message
+            receiver: (unary_message
+              receiver: (self)
+              (unary_identifier))
+            (binary_operator)
+            (identifier)))))))
+
+==========================================
+Class-side method
+==========================================
+
+Class { #name : #Counter }
+
+Counter class >> new [
+    ^ super new initialize
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference
+      class_name: (identifier)
+      selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (unary_message
+            receiver: (unary_message
+              receiver: (super)
+              (unary_identifier))
+            (unary_identifier)))))))
+
+==========================================
+Method with multi-keyword selector
+==========================================
+
+Class { #name : #Dict }
+
+Dict >> at: key put: value [
+    ^ self basicAt: key put: value
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference
+      class_name: (identifier)
+      selector: (keyword)
+      param: (identifier)
+      selector: (keyword)
+      param: (identifier))
+    (method_body
+      (statement
+        (return
+          (keyword_message
+            receiver: (self)
+            (keyword) (identifier)
+            (keyword) (identifier)))))))
+
+==========================================
+Method with metadata
+==========================================
+
+Class { #name : #Counter }
+
+{ #category : 'accessing' }
+Counter >> value [
+    ^ value
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_metadata
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))))
+    (method_reference
+      class_name: (identifier)
+      selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement (return (identifier))))))
+
+==========================================
+Method with temporaries and block
+==========================================
+
+Class { #name : #Counter }
+
+{ #category : 'examples' }
+Counter >> complexMethod [
+    | block result |
+    block := [ :x | x + 1 ].
+    result := block value: 5.
+    ^ result
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_metadata
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))))
+    (method_reference
+      class_name: (identifier)
+      selector: (unary_selector (unary_identifier)))
+    (method_body
+      (temporaries (identifier) (identifier))
+      (statement
+        (assignment
+          (identifier)
+          (block
+            (block_argument)
+            (statement
+              (binary_message
+                receiver: (identifier)
+                (binary_operator)
+                (number))))))
+      (statement
+        (assignment
+          (identifier)
+          (keyword_message
+            receiver: (identifier)
+            (keyword)
+            (number))))
+      (statement (return (identifier))))))
+
+==========================================
+Method with cascade
+==========================================
+
+Class { #name : #Foo }
+
+Foo >> example [
+    OrderedCollection new
+        add: 1;
+        add: 2;
+        yourself
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference
+      class_name: (identifier)
+      selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (cascade
+          receiver: (keyword_message
+            receiver: (unary_message
+              receiver: (identifier)
+              (unary_identifier))
+            (keyword)
+            (number))
+          (cascaded_keyword_message (keyword) (number))
+          (cascaded_unary_message (unary_identifier)))))))
+
+==========================================
+Method with pragma
+==========================================
+
+Class { #name : #Foo }
+
+Foo >> pragmaMethod [
+    <primitive: 1>
+    ^ 42
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference
+      class_name: (identifier)
+      selector: (unary_selector (unary_identifier)))
+    (method_body
+      (pragma
+        (pragma_keyword_selector (keyword) (number)))
+      (statement (return (number))))))
+
+==========================================
+Multiple methods
+==========================================
+
+Class { #name : #Counter }
+
+Counter >> value [
+    ^ value
+]
+
+Counter >> value: anInteger [
+    value := anInteger
+]
+
+Counter >> + aNumber [
+    ^ self value + aNumber
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference
+      class_name: (identifier)
+      selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (identifier)))))
+  (method_definition
+    (method_reference
+      class_name: (identifier)
+      selector: (keyword)
+      param: (identifier))
+    (method_body
+      (statement (assignment (identifier) (identifier)))))
+  (method_definition
+    (method_reference
+      class_name: (identifier)
+      selector: (binary_selector (binary_operator))
+      param: (identifier))
+    (method_body
+      (statement
+        (return
+          (binary_message
+            receiver: (unary_message receiver: (self) (unary_identifier))
+            (binary_operator)
+            (identifier)))))))

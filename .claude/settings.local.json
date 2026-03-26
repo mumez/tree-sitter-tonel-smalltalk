@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /home/ume/git/ -name *.json -path */tree-sitter*)",
+      "Bash(find /home/ume/git/ -name *.st)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm dlx:*)",
+      "Bash(./node_modules/.bin/tree-sitter generate:*)",
+      "Bash(pnpm run:*)",
+      "Bash(node:*)",
+      "Bash(./tree-sitter parse:*)",
+      "Bash(apt list:*)",
+      "Bash(cc --version)",
+      "Bash(sudo apt-get:*)",
+      "Bash(node_modules/.bin/tree-sitter parse:*)",
+      "Bash(for snippet:*)",
+      "Bash(do echo:*)",
+      "Bash(echo \"Class { #name : #Counter }:*)",
+      "Bash(cat EOF Class {)",
+      "Bash(grep -v \"Warning\\\\|configuration\\\\|language grammars\" __NEW_LINE_c46842687c98390c__ echo --- __NEW_LINE_c46842687c98390c__ cat EOF Class {)",
+      "Bash(pnpm test:*)",
+      "Bash(grep -E \"ERROR|\\\\.st$\")",
+      "Bash(ls /home/mumez/git/tonel-smalltalk-parser/downloads/Stick/src/Stick-Core/*.st)",
+      "Bash(awk 'NR==114' /home/mumez/git/tonel-smalltalk-parser/downloads/CodeParadise/repository/CodeParadise-Browser-Support/CpBrowserClipboardItem.class.st)"
+    ]
+  }
+}

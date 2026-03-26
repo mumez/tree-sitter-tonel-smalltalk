@@ -1,0 +1,12 @@
+claude-docs/
+node_modules/
+tree-sitter
+
+# node-gyp build output
+build/
+
+# Rust build output
+target/
+
+# Compiled native bindings
+*.node
