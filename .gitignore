@@ -1,3 +1,4 @@
+settings.local.json
 claude-docs/
 node_modules/
 tree-sitter
@@ -10,3 +11,12 @@ target/
 
 # Compiled native bindings
 *.node
+
+# Python build output
+*.egg-info/
+*.egg
+dist/
+.venv/
+__pycache__/
+*.so
+*.pyd

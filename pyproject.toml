@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tree-sitter-tonel-smalltalk"
+version = "0.1.0"
+description = "Tree-sitter grammar for Tonel-exported Smalltalk source files"
+readme = "README.md"
+license = { text = "MIT" }
+keywords = ["tree-sitter", "smalltalk", "tonel", "parser"]
+requires-python = ">=3.8"
+dependencies = ["tree-sitter>=0.22.0"]
+
+[project.optional-dependencies]
+dev = ["tree-sitter-cli"]
+
+[tool.setuptools.packages.find]
+where = ["bindings/python"]
+
+[tool.setuptools.package-data]
+tree_sitter_tonel_smalltalk = ["*.pyi", "py.typed"]

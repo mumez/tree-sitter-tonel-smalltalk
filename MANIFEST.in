@@ -1,0 +1,3 @@
+include src/parser.c
+include src/tree_sitter/parser.h
+include bindings/python/tree_sitter_tonel_smalltalk/binding.c
