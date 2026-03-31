@@ -283,6 +283,95 @@ Foo >> pragmaMethod [
       (statement (return (number))))))
 
 ==========================================
+Multiple pragmas
+==========================================
+
+Class { #name : #Foo }
+
+Foo >> primMethod [
+    <primitive: 1>
+    <option: 'foo'>
+    ^ 42
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference
+      class_name: (identifier)
+      selector: (unary_selector (unary_identifier)))
+    (method_body
+      (pragma
+        (pragma_keyword_selector (keyword) (number)))
+      (pragma
+        (pragma_keyword_selector (keyword) (string)))
+      (statement (return (number))))))
+
+==========================================
+Return self
+==========================================
+
+Class { #name : #Foo }
+
+Foo >> initialize [
+    super initialize.
+    ^ self
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference
+      class_name: (identifier)
+      selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (unary_message receiver: (super) (unary_identifier)))
+      (statement (return (self))))))
+
+==========================================
+Class-side multi-keyword selector
+==========================================
+
+Class { #name : #Interval }
+
+Interval class >> from: start to: stop [
+    ^ self new from: start to: stop
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference
+      class_name: (identifier)
+      selector: (keyword)
+      param: (identifier)
+      selector: (keyword)
+      param: (identifier))
+    (method_body
+      (statement
+        (return
+          (keyword_message
+            receiver: (unary_message receiver: (self) (unary_identifier))
+            (keyword) (identifier)
+            (keyword) (identifier)))))))
+
+==========================================
 Multiple methods
 ==========================================
 
