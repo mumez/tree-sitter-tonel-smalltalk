@@ -250,6 +250,7 @@ module.exports = grammar({
         alias(new RegExp(symbol_chars), $.symbol),
         alias($.binary_operator, $.symbol),
         alias(/\./, $.symbol),
+        alias(";", $.symbol),
         alias(":=", $.symbol),
         alias("^", $.symbol),
         alias($.identifier, $.symbol),
