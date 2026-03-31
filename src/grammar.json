@@ -1307,6 +1307,15 @@
           "type": "ALIAS",
           "content": {
             "type": "STRING",
+            "value": ";"
+          },
+          "named": true,
+          "value": "symbol"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "STRING",
             "value": ":="
           },
           "named": true,
