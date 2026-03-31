@@ -64,6 +64,115 @@ Class {
         (ston_pair (ston_key (ston_symbol)) (ston_value (string)))))))
 
 ==========================================
+Class with pool dictionary
+==========================================
+
+Class {
+	#name : #MyPoolImportingClass,
+	#superclass : #Object,
+	#instVars : [
+		'instanceVariable1'
+	],
+	#pools : [
+		'AxxConstants'
+	],
+	#category : 'MyPackage-FFI',
+	#package : 'MyPackage-FFI'
+}
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol)))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol)))
+        (ston_pair
+          (ston_key (ston_symbol))
+          (ston_value
+            (ston_list
+              (ston_value (string)))))
+        (ston_pair
+          (ston_key (ston_symbol))
+          (ston_value
+            (ston_list
+              (ston_value (string)))))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))))))
+
+==========================================
+Class with traits field
+==========================================
+
+Class {
+	#name : #RSLinePlot,
+	#superclass : #Object,
+	#traits : 'RSTLine',
+	#category : 'Roassal3-Chart'
+}
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol)))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol)))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))))))
+
+==========================================
+Class with string name and superclass
+==========================================
+
+Class {
+	#name : 'SkError',
+	#superclass : 'Error',
+	#category : 'Stick-Core',
+	#package : 'Stick-Core'
+}
+
+---
+
+(source_file
+  (definition
+    (class_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))))))
+
+==========================================
+Extension with starred category method
+==========================================
+
+Extension { #name : 'Exception' }
+
+{ #category : '*Stick-Core-testing' }
+Exception >> isReconnectEnded [
+	^false
+]
+
+---
+
+(source_file
+  (definition
+    (extension_definition
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string))))))
+  (method_definition
+    (method_metadata
+      (ston_map
+        (ston_pair (ston_key (ston_symbol)) (ston_value (string)))))
+    (method_reference
+      class_name: (identifier)
+      selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (false))))))
+
+==========================================
 Trait definition
 ==========================================
 

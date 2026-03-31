@@ -318,6 +318,368 @@ T >> m [
               (binary_message receiver: (identifier) (binary_operator) (number)))))))))
 
 ==========================================
+Float with exponent
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ 1.23e4
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (number))))))
+
+==========================================
+Float with negative exponent
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ 1.5e-3
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (number))))))
+
+==========================================
+Scaled decimal literal
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ 3.14s2
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (number))))))
+
+==========================================
+Block with multiple arguments
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ [ :x :y | x + y ]
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (block
+            (block_argument)
+            (block_argument)
+            (statement
+              (binary_message receiver: (identifier) (binary_operator) (identifier)))))))))
+
+==========================================
+Nested block
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ [ [ 1 + 2 ] value ]
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (block
+            (statement
+              (unary_message
+                receiver: (block
+                  (statement
+                    (binary_message receiver: (number) (binary_operator) (number))))
+                (unary_identifier)))))))))
+
+==========================================
+Block with temporaries
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ [ | t | t := 1 ]
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (block
+            (temporaries (identifier))
+            (statement
+              (assignment (identifier) (number)))))))))
+
+==========================================
+String containing closing bracket
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ 'hello ] world'
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (string))))))
+
+==========================================
+Comment containing closing bracket
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    "comment with ] inside"
+    ^ 42
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (comment)
+    (method_body (statement (return (number))))))
+
+==========================================
+Nested literal array
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ #(#(1 2) #(3 4))
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (literal_array
+            (literal_array (symbol) (symbol))
+            (literal_array (symbol) (symbol))))))))
+
+==========================================
+Empty dynamic array
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ {}
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (dynamic_array))))))
+
+==========================================
+Special character closing bracket
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ $]
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (character))))))
+
+==========================================
+Space character literal
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ $
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body (statement (return (character))))))
+
+==========================================
+Multiple temporaries and statements
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    | a b |
+    a := 1.
+    b := 2.
+    ^ a + b
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (temporaries (identifier) (identifier))
+      (statement (assignment (identifier) (number)))
+      (statement (assignment (identifier) (number)))
+      (statement
+        (return
+          (binary_message receiver: (identifier) (binary_operator) (identifier)))))))
+
+==========================================
+Cascade with keyword messages
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    col add: 1; add: 2
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (cascade
+          receiver: (keyword_message
+            receiver: (identifier)
+            (keyword) (number))
+          (cascaded_keyword_message (keyword) (number)))))))
+
+==========================================
+Chained assignment with return
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ a := b := 1
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (assignment
+            (identifier)
+            (assignment (identifier) (number))))))))
+
+==========================================
+Literal array with pseudo-variables
+==========================================
+
+Class { #name : #T }
+
+T >> m [
+    ^ #(true false nil foo #bar 'baz')
+]
+
+---
+
+(source_file
+  (definition
+    (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
+  (method_definition
+    (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
+    (method_body
+      (statement
+        (return
+          (literal_array
+            (true)
+            (false)
+            (nil)
+            (symbol)
+            (symbol)
+            (string)))))))
+
+==========================================
 Parenthesized expression
 ==========================================
 
