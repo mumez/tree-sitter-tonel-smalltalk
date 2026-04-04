@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-tonel-smalltalk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tree-sitter grammar for Tonel-exported Smalltalk source files",
   "main": "bindings/node",
   "scripts": {
@@ -20,5 +20,14 @@
   },
   "devDependencies": {
     "tree-sitter-cli": "0.20.8"
-  }
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.smalltalk",
+      "file-types": [
+        "st"
+      ],
+      "highlights": "queries/highlights.scm"
+    }
+  ]
 }
