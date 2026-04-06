@@ -3,9 +3,10 @@
     {
       "name": "tonel-smalltalk",
       "scope": "source.smalltalk.tonel",
-      "file-types": ["st"],
-      "roots": [],
-      "url": "https://github.com/your-repo/tree-sitter-tonel-smalltalk"
+      "file-types": [
+        "st"
+      ],
+      "url": "https://github.com/mumez/tree-sitter-tonel-smalltalk"
     }
   ]
 }
