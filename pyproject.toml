@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tree-sitter-tonel-smalltalk"
-version = "0.1.0"
+version = "0.2.0"
 description = "Tree-sitter grammar for Tonel-exported Smalltalk source files"
 readme = "README.md"
 license = { text = "MIT" }

@@ -19,7 +19,14 @@ jobs:
           node-version: "20"
 
       - name: Install tree-sitter-cli globally
-        run: npm install -g tree-sitter-cli@0.20.8
+        run: npm install -g tree-sitter-cli@0.26.8
+
+      - name: Setup tree-sitter config
+        run: |
+          tree-sitter init-config
+          jq '."parser-directories" += ["'"$(dirname "$GITHUB_WORKSPACE")"'"]' \
+            ~/.config/tree-sitter/config.json > /tmp/ts-config.json
+          mv /tmp/ts-config.json ~/.config/tree-sitter/config.json
 
       - name: Run tests
         run: tree-sitter test

@@ -3,7 +3,7 @@ const binary_chars = "-+\\\\/*~<>=@,%|&?!";
 const symbol_chars = `[A-Za-z0-9_:]+|[${binary_chars}]+`;
 const identifier_regex = /[A-Za-z_][A-Za-z0-9_]*/;
 
-module.exports = grammar({
+export default grammar({
   name: "tonel_smalltalk",
 
   supertypes: ($) => [$.expression, $.primary],
