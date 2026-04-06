@@ -6,7 +6,11 @@
       "file-types": [
         "st"
       ],
+      "highlights": "queries/highlights.scm",
       "url": "https://github.com/mumez/tree-sitter-tonel-smalltalk"
     }
-  ]
+  ],
+  "metadata": {
+    "version": "0.1.1"
+  }
 }
