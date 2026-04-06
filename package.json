@@ -2,6 +2,7 @@
   "name": "tree-sitter-tonel-smalltalk",
   "version": "0.2.0",
   "description": "Tree-sitter grammar for Tonel-exported Smalltalk source files",
+  "type": "module",
   "main": "bindings/node",
   "scripts": {
     "generate": "tree-sitter generate",
@@ -16,7 +17,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "node-addon-api": "^8.0.0"
+    "node-addon-api": "^8.0.0",
+    "node-gyp-build": "^4.8.4"
   },
   "devDependencies": {
     "tree-sitter-cli": "0.26.8"
