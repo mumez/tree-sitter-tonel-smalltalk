@@ -3,16 +3,18 @@
     {
       "target_name": "tree_sitter_tonel_smalltalk_binding",
       "include_dirs": [
-        "<!(node -e \"require('nan')\")",
+        "<!(node -e \"require('node-addon-api').include\")",
         "src"
       ],
       "sources": [
         "bindings/node/binding.cc",
-        "src/parser.c",
-        # If your language uses an external scanner, add it here.
+        "src/parser.c"
       ],
       "cflags_c": [
-        "-std=c99",
+        "-std=c99"
+      ],
+      "defines": [
+        "NAPI_DISABLE_CPP_EXCEPTIONS"
       ]
     }
   ]

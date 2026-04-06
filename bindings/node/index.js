@@ -1,19 +1,11 @@
+let binding;
 try {
-  module.exports = require("../../build/Release/tree_sitter_tonel_smalltalk_binding");
-} catch (error1) {
-  if (error1.code !== 'MODULE_NOT_FOUND') {
-    throw error1;
-  }
-  try {
-    module.exports = require("../../build/Debug/tree_sitter_tonel_smalltalk_binding");
-  } catch (error2) {
-    if (error2.code !== 'MODULE_NOT_FOUND') {
-      throw error2;
-    }
-    throw error1
-  }
+  binding = require("../../build/Release/tree_sitter_tonel_smalltalk_binding");
+} catch (_) {
+  binding = require("../../build/Debug/tree_sitter_tonel_smalltalk_binding");
 }
 
-try {
-  module.exports.nodeTypeInfo = require("../../src/node-types.json");
-} catch (_) {}
+module.exports = {
+  language: binding.language,
+  nodeTypeInfo: require("../../src/node-types.json"),
+};
