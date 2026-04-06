@@ -12,8 +12,7 @@ A [tree-sitter](https://tree-sitter.github.io/tree-sitter/) grammar for [Tonel](
 ## Requirements
 
 - Node.js + [pnpm](https://pnpm.io/)
-- `tree-sitter-cli 0.20.8` (installed automatically via `pnpm install`)
-- GLIBC 2.39+ (Ubuntu 24.04+) — required by `tree-sitter-cli 0.20.8`
+- `tree-sitter-cli 0.26.8` (installed automatically via `pnpm install`)
 
 ## Setup
 

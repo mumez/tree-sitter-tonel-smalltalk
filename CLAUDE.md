@@ -11,13 +11,11 @@ A tree-sitter grammar for Tonel-format Smalltalk `.st` files (Pharo's standard e
 ## Commands
 
 ```bash
-pnpm install            # Install dependencies (tree-sitter-cli 0.20.8)
+pnpm install            # Install dependencies (tree-sitter-cli 0.26.8)
 pnpm run generate       # Generate parser from grammar.js → src/ directory
 pnpm test               # Run corpus tests (tree-sitter test)
 pnpm run parse <file>   # Parse a specific .st file
 ```
-
-> **Note:** `tree-sitter-cli 0.20.8` requires GLIBC 2.39+ (Ubuntu 24.04+). On Ubuntu 22.04 (GLIBC 2.35), `generate`/`test` will fail.
 
 ### Verify against real Tonel files
 
