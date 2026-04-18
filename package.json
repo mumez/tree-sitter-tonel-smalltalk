@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-tonel-smalltalk",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Tree-sitter grammar for Tonel-exported Smalltalk source files",
   "type": "module",
   "main": "bindings/node",
