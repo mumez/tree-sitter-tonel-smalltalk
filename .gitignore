@@ -21,3 +21,12 @@ dist/
 __pycache__/
 *.so
 *.pyd
+
+# Zig build output
+zig-out/
+zig-cache/
+.zig-cache/
+
+# Generated tree-sitter utility headers (created by tree-sitter generate)
+src/tree_sitter/alloc.h
+src/tree_sitter/array.h
