@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-tonel-smalltalk
-        VERSION "0.2.1"
+        VERSION "0.2.2"
         DESCRIPTION "TonelSmalltalk grammar for tree-sitter"
         HOMEPAGE_URL "https://github.com/tree-sitter/tree-sitter-tonel-smalltalk"
         LANGUAGES C)
