@@ -4,14 +4,12 @@
     {
       "name": "tonel-smalltalk",
       "scope": "source.smalltalk.tonel",
-      "file-types": [
-        "st"
-      ],
+      "file-types": ["st"],
       "highlights": "queries/highlights.scm"
     }
   ],
   "metadata": {
-    "version": "0.2.2"
+    "version": "0.2.4"
   },
   "bindings": {
     "c": true,
