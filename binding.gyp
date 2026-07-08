@@ -3,7 +3,7 @@
     {
       "target_name": "tree_sitter_tonel_smalltalk_binding",
       "include_dirs": [
-        "<!(node -e \"require('node-addon-api').include\")",
+        "<!@(node -p \"require('node-addon-api').include\")",
         "src"
       ],
       "sources": [
