@@ -1,6 +1,6 @@
 LANGUAGE_NAME := tree-sitter-tonel-smalltalk
 HOMEPAGE_URL := https://github.com/tree-sitter/tree-sitter-tonel-smalltalk
-VERSION := 0.2.2
+VERSION := 0.2.4
 
 # repository
 SRC_DIR := src
