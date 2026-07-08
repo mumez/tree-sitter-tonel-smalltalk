@@ -12,8 +12,6 @@ export default grammar({
     // Pipe disambiguation: | used as temp delimiter vs binary operator
     [$.temporaries, $.primary],
     [$.temporaries, $.temporaries],
-    // keyword_message parsing
-    [$.keyword_message, $.keyword_message],
     // block/dynamic_array vs method_body dot repeat disambiguation
     [$.block],
     [$.dynamic_array],
