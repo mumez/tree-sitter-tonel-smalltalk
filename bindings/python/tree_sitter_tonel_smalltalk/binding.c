@@ -8,7 +8,7 @@ typedef struct TSLanguage TSLanguage;
 extern TSLanguage *tree_sitter_tonel_smalltalk(void);
 
 static PyObject *_binding_language(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args)) {
-    return PyLong_FromVoidPtr(tree_sitter_tonel_smalltalk());
+    return PyCapsule_New(tree_sitter_tonel_smalltalk(), "tree_sitter.Language", NULL);
 }
 
 static PyMethodDef methods[] = {
