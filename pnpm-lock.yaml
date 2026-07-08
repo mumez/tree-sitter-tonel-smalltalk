@@ -7,7 +7,7 @@ settings:
 dependencies:
   node-addon-api:
     specifier: ^8.0.0
-    version: 8.7.0
+    version: 8.9.0
   node-gyp-build:
     specifier: ^4.8.4
     version: 4.8.4
@@ -19,8 +19,8 @@ devDependencies:
 
 packages:
 
-  /node-addon-api@8.7.0:
-    resolution: {integrity: sha512-9MdFxmkKaOYVTV+XVRG8ArDwwQ77XIgIPyKASB1k3JPq3M8fGQQQE3YpMOrKm6g//Ktx8ivZr8xo1Qmtqub+GA==}
+  /node-addon-api@8.9.0:
+    resolution: {integrity: sha512-ekZMeaaIzSQTSpr7X2X3iJM7lTzgnx8ahAG9pJfT/7+14mlEM8ZYQ9cgCDvSSRbReFK0oHli3WrZdCiRsgAT9Q==}
     engines: {node: ^18 || ^20 || >= 21}
     dev: false
 
