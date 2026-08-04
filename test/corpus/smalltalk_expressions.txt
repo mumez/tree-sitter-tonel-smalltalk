@@ -53,16 +53,7 @@ T >> m [
     (class_definition (ston_map (ston_pair (ston_key (ston_symbol)) (ston_value (ston_symbol))))))
   (method_definition
     (method_reference class_name: (identifier) selector: (unary_selector (unary_identifier)))
-    (method_body
-      (statement
-        (return
-          (dynamic_array
-            (number)
-            (number)
-            (number)
-            (number)
-            (number)
-            (number)))))))
+    (method_body (statement (return (dynamic_array (number) (number) (number) (number) (number) (number)))))))
 
 ==========================================
 String literal
