@@ -2,14 +2,16 @@
   "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
   "grammars": [
     {
-      "name": "tonel-smalltalk",
+      "name": "tonel_smalltalk",
       "scope": "source.smalltalk.tonel",
-      "file-types": ["st"],
+      "file-types": [
+        "st"
+      ],
       "highlights": "queries/highlights.scm"
     }
   ],
   "metadata": {
-    "version": "0.2.6"
+    "version": "0.2.7"
   },
   "bindings": {
     "c": true,
